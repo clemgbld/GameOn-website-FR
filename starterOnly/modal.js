@@ -15,22 +15,21 @@ const modalCloseBtn = document.querySelector(".close");
 const formEl = document.querySelector(".form");
 //// First Name
 const firstInputEl = document.getElementById("first");
-const errorFirstEl = document.querySelector(".first-error");
+
 //// Last Name
 const lastInputEl = document.getElementById("last");
-const errorLastEl = document.querySelector(".last-error");
+
 //// Email
 const emailInputEl = document.getElementById("email");
-const errorEmailEl = document.querySelector(".email-error");
+
 //// Number of competion;
 const quantityEl = document.getElementById("quantity");
-const errorQuantityEl = document.querySelector(".quantity-error");
+
 //// List of city
 const listOfCityEl = document.querySelectorAll('input[name="location"]');
-const errorCityEl = document.querySelector(".city-error");
+
 /// terms of use
 const termsOfUseEl = document.getElementById("checkbox1");
-const errorTermsEl = document.querySelector(".terms-error");
 
 // launch modal form
 const launchModal = () => {
@@ -51,13 +50,13 @@ modalCloseBtn.addEventListener("click", closeModal);
 // from validation
 
 //// show error function
-const showError = (errorEl) => {
-  errorEl.style.display = "block";
+const showError = (element) => {
+  element.closest(".formData").dataset.errorVisible = true;
 };
 
 //// hide error function
-const hideError = (errorEl) => {
-  errorEl.style.display = "none";
+const hideError = (element) => {
+  element.closest(".formData").dataset.errorVisible = null;
 };
 
 // regex patern
@@ -77,27 +76,27 @@ const formValidation = (e) => {
 
   //// Check the validation of the input or the box
 
-  const checkValidation = (condition, errorEl) => {
+  const checkValidation = (condition, element) => {
     if (!condition) {
       numberOfError++;
-      return showError(errorEl);
+      return showError(element);
     }
 
-    hideError(errorEl);
+    hideError(element);
   };
 
   // check if first name has at least 2 charactères
-  checkValidation(nameRegex.test(firstInputEl.value.trim()), errorFirstEl);
+  checkValidation(nameRegex.test(firstInputEl.value.trim()), firstInputEl);
   // check if first name has at least 2 charactères
-  checkValidation(nameRegex.test(lastInputEl.value.trim()), errorLastEl);
+  checkValidation(nameRegex.test(lastInputEl.value.trim()), lastInputEl);
   // check if the email is valid
-  checkValidation(emailRegex.test(emailInputEl.value.trim()), errorEmailEl);
+  checkValidation(emailRegex.test(emailInputEl.value.trim()), emailInputEl);
   // check if there is a number of competion
   checkValidation(
     quantityEl.value != "" &&
       !isNaN(+quantityEl.value) &&
       Number.isInteger(+quantityEl.value),
-    errorQuantityEl
+    quantityEl
   );
   // check if at least one city is selected;
 
@@ -107,17 +106,16 @@ const formValidation = (e) => {
 
   console.log(cityName);
 
-  checkValidation(cityName, errorCityEl);
+  checkValidation(cityName, listOfCityEl[0]);
 
   // check if the terms of use are checked
-  checkValidation(termsOfUseEl.checked, errorTermsEl);
+  checkValidation(termsOfUseEl.checked, termsOfUseEl);
 
   // if the number of errors are above 0 the form is not submitted
   if (numberOfError > 0) return;
 
   // if there is no error reset and close the form
   formEl.reset();
-  closeModal();
 };
 
 formEl.addEventListener("submit", formValidation);
