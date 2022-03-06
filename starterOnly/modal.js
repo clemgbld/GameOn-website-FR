@@ -28,6 +28,9 @@ const errorQuantityEl = document.querySelector(".quantity-error");
 //// List of city
 const listOfCityEl = document.querySelectorAll('input[name="location"]');
 const errorCityEl = document.querySelector(".city-error");
+/// terms of use
+const termsOfUseEl = document.getElementById("checkbox1");
+const errorTermsEl = document.querySelector(".terms-error");
 
 // launch modal form
 const launchModal = () => {
@@ -107,6 +110,14 @@ const formValidation = (e) => {
   checkValidation(cityName, errorCityEl);
 
   // check if the terms of use are checked
+  checkValidation(termsOfUseEl.checked, errorTermsEl);
+
+  // if the number of errors are above 0 the form is not submitted
+  if (numberOfError > 0) return;
+
+  // if there is no error reset and close the form
+  formEl.reset();
+  closeModal();
 };
 
 formEl.addEventListener("submit", formValidation);

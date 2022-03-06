@@ -540,6 +540,7 @@ footer {
 .last-error,
 .email-error,
 .quantity-error,
-.city-error {
+.city-error,
+.terms-error {
   display: none;
 }
