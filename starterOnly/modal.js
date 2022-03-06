@@ -17,6 +17,8 @@ const firstInputEl = document.getElementById("first");
 const errorFirstEl = document.querySelector(".first-error");
 const lastInputEl = document.getElementById("last");
 const errorLastEl = document.querySelector(".last-error");
+const emailInputEl = document.getElementById("email");
+const errorEmailEl = document.querySelector(".email-error");
 
 // launch modal form
 const launchModal = () => {
@@ -46,6 +48,12 @@ const hideError = (errorEl) => {
   errorEl.style.display = "none";
 };
 
+// regex patern
+
+const nameRegex = /^[a-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ-]{2,}$/i;
+
+const emailRegex = /^([a-z\d\._-]+)@([a-z\d-_]+)\.([a-z]+)(\.[a-z]+)?$/;
+
 // validation conditions
 
 const formValidation = (e) => {
@@ -67,9 +75,11 @@ const formValidation = (e) => {
   };
 
   // check if first name has at least 2 charactères
-  checkValidation(firstInputEl.value.trim().length >= 2, errorFirstEl);
+  checkValidation(nameRegex.test(firstInputEl.value.trim()), errorFirstEl);
   // check if first name has at least 2 charactères
-  checkValidation(lastInputEl.value.trim().length >= 2, errorLastEl);
+  checkValidation(nameRegex.test(lastInputEl.value.trim()), errorLastEl);
+  // check if the email is valid
+  checkValidation(emailRegex.test(emailInputEl.value.trim()), errorEmailEl);
 };
 
 formEl.addEventListener("submit", formValidation);

@@ -537,6 +537,7 @@ footer {
 }
 
 .first-error,
-.last-error {
+.last-error,
+.email-error {
   display: none;
 }
