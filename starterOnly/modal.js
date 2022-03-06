@@ -13,12 +13,21 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelector(".close");
 const formEl = document.querySelector(".form");
+//// First Name
 const firstInputEl = document.getElementById("first");
 const errorFirstEl = document.querySelector(".first-error");
+//// Last Name
 const lastInputEl = document.getElementById("last");
 const errorLastEl = document.querySelector(".last-error");
+//// Email
 const emailInputEl = document.getElementById("email");
 const errorEmailEl = document.querySelector(".email-error");
+//// Number of competion;
+const quantityEl = document.getElementById("quantity");
+const errorQuantityEl = document.querySelector(".quantity-error");
+//// List of city
+const listOfCityEl = document.querySelectorAll('input[name="location"]');
+const errorCityEl = document.querySelector(".city-error");
 
 // launch modal form
 const launchModal = () => {
@@ -80,6 +89,24 @@ const formValidation = (e) => {
   checkValidation(nameRegex.test(lastInputEl.value.trim()), errorLastEl);
   // check if the email is valid
   checkValidation(emailRegex.test(emailInputEl.value.trim()), errorEmailEl);
+  // check if there is a number of competion
+  checkValidation(
+    quantityEl.value != "" &&
+      !isNaN(+quantityEl.value) &&
+      Number.isInteger(+quantityEl.value),
+    errorQuantityEl
+  );
+  // check if at least one city is selected;
+
+  let cityName;
+
+  listOfCityEl.forEach((city) => (city.checked ? (cityName = city.value) : ""));
+
+  console.log(cityName);
+
+  checkValidation(cityName, errorCityEl);
+
+  // check if the terms of use are checked
 };
 
 formEl.addEventListener("submit", formValidation);

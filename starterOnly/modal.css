@@ -538,6 +538,8 @@ footer {
 
 .first-error,
 .last-error,
-.email-error {
+.email-error,
+.quantity-error,
+.city-error {
   display: none;
 }
