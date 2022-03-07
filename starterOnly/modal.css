@@ -149,6 +149,7 @@ main {
   border-radius: 15px;
   cursor: pointer;
   font-size: 16px;
+  border: none;
 }
 
 .button:hover {
@@ -188,6 +189,31 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+}
+
+.modal-thanks-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  height: 805px;
+}
+
+.modal-thanks-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 243px;
+  height: 100%;
+
+  font-size: 32px;
+
+  font-weight: 700;
+
+  text-align: center;
 }
 
 label {
@@ -324,7 +350,8 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-thanks {
   background: #fe142f;
   display: block;
   margin: 0 auto;

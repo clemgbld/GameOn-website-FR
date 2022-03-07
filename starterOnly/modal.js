@@ -8,29 +8,25 @@ const editNav = () => {
 };
 
 // DOM Elements
+const modalThanks = document.querySelector(".modal-thanks-container");
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelector(".close");
+const modalThanksCloseBtn = document.querySelector(".btn-thanks");
 const formEl = document.querySelector(".form");
 //// First Name
 const firstInputEl = document.getElementById("first");
-
 //// Last Name
 const lastInputEl = document.getElementById("last");
-
 //// Email
 const emailInputEl = document.getElementById("email");
-
 //// Number of competion;
 const quantityEl = document.getElementById("quantity");
-
 //// List of city
 const listOfCityEl = document.querySelectorAll('input[name="location"]');
-
 /// terms of use
 const termsOfUseEl = document.getElementById("checkbox1");
-
 // launch modal form
 const launchModal = () => {
   modalbg.style.display = "block";
@@ -38,6 +34,14 @@ const launchModal = () => {
 
 // close modal form
 const closeModal = () => {
+  // if the thanks message is currently in display hide it and display the form instead
+  if ((modalThanks.classList.contains = "open")) {
+    modalThanks.style.display = "none";
+    modalThanks.classList.remove = "open";
+    formEl.classList.add = "open";
+    formEl.style.display = "block";
+  }
+  // close the overlay and the modal
   modalbg.style.display = "none";
 };
 
@@ -46,6 +50,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // close modal event
 modalCloseBtn.addEventListener("click", closeModal);
+modalThanksCloseBtn.addEventListener("click", closeModal);
 
 // from validation
 
@@ -116,6 +121,10 @@ const formValidation = (e) => {
 
   // if there is no error reset and close the form
   formEl.reset();
+  formEl.style.display = "none";
+  formEl.classList.remove = "open";
+  modalThanks.classList.add = "open";
+  modalThanks.style.display = "flex";
 };
 
 formEl.addEventListener("submit", formValidation);
