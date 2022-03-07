@@ -1,5 +1,5 @@
+const navEl = document.getElementById("myTopnav");
 const editNav = () => {
-  let navEl = document.getElementById("myTopnav");
   if (navEl.className === "topnav") {
     navEl.className += " responsive";
   } else {
@@ -29,6 +29,12 @@ const listOfCityEl = document.querySelectorAll('input[name="location"]');
 const termsOfUseEl = document.getElementById("checkbox1");
 // launch modal form
 const launchModal = () => {
+  console.log(navEl.classList);
+  if (navEl.className === "topnav responsive") {
+    editNav();
+  }
+  // prevent the scrolling of the page
+  document.body.style.overflow = "hidden";
   modalbg.style.display = "block";
 };
 
@@ -40,8 +46,12 @@ const closeModal = () => {
     modalThanks.classList.remove = "open";
     formEl.classList.add = "open";
     formEl.style.display = "block";
+    // allow the scolling of the page
+    document.body.style.overflow = "scroll";
   }
+
   // close the overlay and the modal
+
   modalbg.style.display = "none";
 };
 
