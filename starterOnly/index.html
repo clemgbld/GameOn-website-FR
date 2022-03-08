@@ -5,7 +5,10 @@
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="modal.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
@@ -14,35 +17,32 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
-    </div>
-    <div class="main-navbar">
-      
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
-      <div class="icon" onclick="editNav()">
-        <i class="fa fa-bars icon-menu"></i>
+        <img alt="logo" src="Logo.png" />
+      </div>
+      <div class="main-navbar">
+        <a href="#" class="active"><span>Accueil</span></a>
+        <a href="#"><span>Détails de l'évènement</span></a>
+        <a href="#"><span>À propos</span></a>
+        <a href="#"><span>Contact</span></a>
+        <a href="#"><span>Évènements passés</span></a>
+        <div class="icon" onclick="editNav()">
+          <i class="fa fa-bars icon-menu"></i>
+        </div>
       </div>
     </div>
-    </div>
-  </div>
+
     <main>
       <div class="hero-section">
         <div class="hero-content">
           <h1 class="hero-headline">
-            Marathon national<br>
+            Marathon national<br />
             de jeux vidéos
           </h1>
           <p class="hero-text">
-            Vous aimez jouer ? Notre prochain évènement gaming est ouvert
-            aux réservations... Places limitées !
+            Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux
+            réservations... Places limitées !
           </p>
-          <button class="btn-signup modal-btn">
-            je m'inscris
-          </button>
+          <button class="btn-signup modal-btn">je m'inscris</button>
         </div>
         <div class="hero-img">
           <img src="./bg_img.jpg" alt="img" />
@@ -58,11 +58,12 @@
               name="reserve"
               action="index.html"
               method="get"
-              
             >
               <div
-                class="formData" data-error="Veuillez entrer un prenom contenant au moins 2 caractères ou plus.">
-                <label for="first">Prénom</label><br>
+                class="formData"
+                data-error="Veuillez entrer un prenom contenant au moins 2 caractères ou plus."
+              >
+                <label for="first">Prénom</label><br />
                 <input
                   class="text-control"
                   type="text"
@@ -70,52 +71,66 @@
                   name="first"
                   minlength="2"
                 />
-               
-                <br>
-                
+
+                <br />
               </div>
               <div
-                class="formData" data-error="Veuillez entrer un prenom contenant au moins 2 caractères ou plus.">
-                <label for="last">Nom</label><br>
+                class="formData"
+                data-error="Veuillez entrer un prenom contenant au moins 2 caractères ou plus."
+              >
+                <label for="last">Nom</label><br />
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
-                /><br>
-                
+                /><br />
               </div>
               <div
-                class="formData" data-error="Veuillez entrer un email valide">
-                <label for="email">E-mail</label><br>
+                class="formData"
+                data-error="Veuillez entrer un email valide"
+              >
+                <label for="email">E-mail</label><br />
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
-                /><br>
-                
-
+                /><br />
               </div>
-              <div
-                class="formData">
-                <label for="birthdate">Date de naissance</label><br>
+              <div class="formData">
+                <label for="birthdate">Date de naissance</label><br />
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                /><br />
               </div>
               <div
-                class="formData" data-error="Veuillez entre un nombre entier compris entre 0 et 100.">
-                <label for="quantity">À combien de tournois avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                class="formData"
+                data-error="Veuillez entre un nombre entier compris entre 0 et 100."
+              >
+                <label for="quantity"
+                  >À combien de tournois avez-vous déjà participé ?</label
+                ><br />
+                <input
+                  type="number"
+                  class="text-control"
+                  id="quantity"
+                  name="quantity"
+                  min="0"
+                  max="99"
+                />
               </div>
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-             
+              <p class="text-label">
+                A quel tournoi souhaitez-vous participer cette année ?
+              </p>
+
               <div
-                class="formData" data-error="Veuillez sélectionner au moins une ville.">
+                class="formData"
+                data-error="Veuillez sélectionner au moins une ville."
+              >
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -182,39 +197,29 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-                
               </div>
 
               <div
-                class="formData" data-error="Veuillez accepter les conditions d'utilisation">
-                <input
-                  class="checkbox-input"
-                  type="checkbox"
-                  id="checkbox1"
-                />
-                <label class="checkbox2-label" for="checkbox1" required>
+                class="formData"
+                data-error="Veuillez accepter les conditions d'utilisation"
+              >
+                <input class="checkbox-input" type="checkbox" id="checkbox1" />
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
-                <br>
+                <br />
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Je Je souhaite être prévenu des prochains évènements.
                 </label>
-                <br>
+                <br />
               </div>
-              <button
-                class="btn-submit"
-                type="submit"
-                class="button"
-               
-              >C'est parti</button>
+              <button class="btn-submit" type="submit">C'est parti</button>
             </form>
             <div class="modal-thanks-container">
-              <div class="modal-thanks-text">
-                Merci pour votre inscription
-              </div>
+              <div class="modal-thanks-text">Merci pour votre inscription</div>
               <button class="button btn-thanks">Fermer</button>
             </div>
           </div>
@@ -222,9 +227,7 @@
       </div>
     </main>
     <footer>
-      <p class="copyrights">
-        Copyright 2014 - 2022, GameOn Inc.
-      </p>
+      <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
     <script src="modal.js"></script>
   </body>
