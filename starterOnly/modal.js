@@ -109,7 +109,7 @@ const formValidation = (e) => {
   checkValidation(nameRegex.test(lastInputEl.value.trim()), lastInputEl);
   // check if the email is valid
   checkValidation(emailRegex.test(emailInputEl.value.trim()), emailInputEl);
-  // check if there is a number of competion
+  // check if there is a number of competition
   checkValidation(
     quantityEl.value != "" &&
       !isNaN(+quantityEl.value) &&
