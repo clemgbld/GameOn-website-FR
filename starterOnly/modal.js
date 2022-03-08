@@ -1,13 +1,5 @@
-const navEl = document.getElementById("myTopnav");
-const editNav = () => {
-  if (navEl.className === "topnav") {
-    navEl.className += " responsive";
-  } else {
-    navEl.className = "topnav";
-  }
-};
-
 // DOM Elements
+const navEl = document.getElementById("myTopnav");
 const modalThanks = document.querySelector(".modal-thanks-container");
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -27,6 +19,15 @@ const quantityEl = document.getElementById("quantity");
 const listOfCityEl = document.querySelectorAll('input[name="location"]');
 /// terms of use
 const termsOfUseEl = document.getElementById("checkbox1");
+
+// function that toggle the navigation on mobile
+const editNav = () => {
+  if (navEl.className === "topnav") {
+    return (navEl.className += " responsive");
+  }
+  navEl.className = "topnav";
+};
+
 // launch modal form
 const launchModal = () => {
   console.log(navEl.classList);
@@ -136,5 +137,5 @@ const formValidation = (e) => {
   modalThanks.classList.add = "open";
   modalThanks.style.display = "flex";
 };
-
+// trigger the formvalidation when the form is submited
 formEl.addEventListener("submit", formValidation);
