@@ -78,7 +78,6 @@ img {
 @media screen and (max-width: 768px) {
   .topnav a {
     display: none;
-    margin-right: 2px 2px 20px 2px;
   }
 
   .topnav div.icon {
@@ -92,9 +91,7 @@ img {
   .header-logo img {
     width: 170px;
   }
-}
 
-@media screen and (max-width: 768px) {
   .topnav.responsive {
     position: relative;
   }
@@ -601,13 +598,11 @@ footer {
     font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -1px;
-    white-space: wrap;
   }
   .hero-text {
     width: 81%;
     font-size: 13px;
     margin-top: 17px;
-    white-space: normal;
   }
   .hero-img img {
     border-radius: 10px;

@@ -30,13 +30,15 @@ const editNav = () => {
 
 // launch modal form
 const launchModal = () => {
-  console.log(navEl.classList);
   if (navEl.className === "topnav responsive") {
     editNav();
   }
   // prevent the scrolling of the page
   document.body.style.overflow = "hidden";
+  // display the modal
   modalbg.style.display = "block";
+  // scroll to the top
+  window.scrollTo(0, 0);
 };
 
 // close modal form
@@ -119,8 +121,6 @@ const formValidation = (e) => {
   let cityName;
 
   listOfCityEl.forEach((city) => (city.checked ? (cityName = city.value) : ""));
-
-  console.log(cityName);
 
   checkValidation(cityName, listOfCityEl[0]);
 
