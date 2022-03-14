@@ -2,7 +2,7 @@
 const navEl = document.getElementById("myTopnav");
 const modalThanks = document.querySelector(".modal-thanks-container");
 const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
+const modalBtn = document.querySelector(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCloseBtn = document.querySelector(".close");
 const modalThanksCloseBtn = document.querySelector(".btn-thanks");
@@ -59,7 +59,7 @@ const closeModal = () => {
 };
 
 // launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+modalBtn.addEventListener("click", launchModal);
 
 // close modal event
 modalCloseBtn.addEventListener("click", closeModal);
